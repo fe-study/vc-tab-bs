@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-pagination component.</title>
+	<link rel="stylesheet" href="./css/bulma.css">
+	<style>
+		.container{
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="app" class="container">
+		
+		<v-button>按钮</v-button>
+		<v-button href='www.baidu.com'>按钮</v-button>
+		<v-button v-style='primary small'>按钮</v-button>
+		<v-button v-style='info medium'>按钮</v-button>
+		<v-button v-style='warning large'>按钮</v-button>
+		<v-button v-style='danger'>按钮</v-button>
+		<v-button-toolbar>
+			<v-button-group v-style="small">
+				<v-button v-style='danger outlined'>按钮</v-button>
+				<v-button v-style='danger loading'>按钮</v-button>
+				<v-button v-style='danger disabled'>按钮</v-button>
+			</v-button-group>
+			<v-button-group v-style="large">
+				<v-button v-style='info outlined'>按钮</v-button>
+				<v-button v-style='info loading'>按钮</v-button>
+				<v-button v-style='info disabled'>按钮</v-button>
+			</v-button-group>
+		</v-button-toolbar>
+		<v-button-toolbar>
+			<v-button-group>
+				<v-button>1</v-button>
+				<v-button>2</v-button>
+				<v-button>3</v-button>
+				<v-button>4</v-button>
+			</v-button-group>
+			<v-button-group>
+				<v-button>5</v-button>
+				<v-button>6</v-button>
+				<v-button>7</v-button>
+				<v-button>8</v-button>
+			</v-button-group>
+		</v-button-toolbar>
+	</div>
+	<script src="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+	<script src='../dist/app.js'></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "vue-pagination",
+  "version": "1.0.0",
+  "description": "a vue pagination component",
+  "main": "dist/pagination.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "build-example": "webpack -w --config ./webpack.example.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "vue",
+    "bluma"
+  ],
+  "author": "yangxiaofu",
+  "license": ""
+}
