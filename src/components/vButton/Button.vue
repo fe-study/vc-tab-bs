@@ -49,7 +49,12 @@
 				return this.href ? true : false
 			},
 			vbStyle(){
-				let vStyle = this.vStyle + ' ' + this.className
+				let vStyle = ''
+				if(this.className){
+					vStyle = this.vStyle + ' ' + this.className
+				}else{
+					vStyle = this.vStyle
+				}
 				if(!vStyle){
 					return ''
 				}

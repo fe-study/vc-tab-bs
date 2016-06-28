@@ -1,5 +1,5 @@
 <template>
-	<div class="is-btn-group">
+	<div class="control has-addons">
 		<slot></slot>	
 	</div>
 </template>
@@ -7,7 +7,7 @@
 	export default {
 		data(){
 			return {
-				prefix: 'is-'
+				
 			}
 		},
 		props: {
@@ -25,7 +25,7 @@
 				}
 				let style = []
 				style = this.vStyle.trim().split(' ').map((vClass)=>{
-					return this.prefix + vClass
+					return vClass
 				})
 				return style.join(' ')
 			}
@@ -41,21 +41,5 @@
 	}
 </script>
 <style>
-	.is-btn-group{
-		overflow: hidden;
-	}
-	.is-btn-group > .button{
-		float: left;
-		margin-left: -1px;
-		border-radius: 0;
-	}
-	.is-btn-group .button:first-child{
-		border-top-left-radius: 3px;
-		border-bottom-left-radius: 3px;
-		margin-left: 0;
-	} 
-	.is-btn-group .button:last-child{
-		border-bottom-right-radius: 3px;
-		border-top-right-radius: 3px;
-	} 
+	
 </style>

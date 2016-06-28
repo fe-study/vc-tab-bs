@@ -2,34 +2,37 @@
   <div class="component-standard-pagination" v-show="totalPage>1">
     <nav>
       <ul class="pagination">
-        <li :class="{'disabled': currentPage == 1}">
-          <a href="javascript:void(0);" aria-label="First" @click='onChangePage("first")' >
-            <span aria-hidden="true">&laquo;</span>
+        <li>
+          <a :class="{'is-disabled': currentPage == 1}" class="button" href="javascript:void(0);" aria-label="First" @click='onChangePage("first")' >
+            &laquo;{{firstPageText}}
           </a>
         </li>
-        <li :class="{'disabled': currentPage == 1}">
-          <a href="javascript:void(0);" aria-label="Previous" @click="onChangePage('previous')" >
-            <span class="smaller" aria-hidden="true">&lt;</span>
+        <li>
+          <a :class="{'is-disabled': currentPage == 1}" class="button" href="javascript:void(0);" aria-label="Previous" @click="onChangePage('previous')" >
+            &lt;{{previousPageText}}
           </a>
+        </li>
+        <li v-if="isMoreIcon&&paginationData[0]>1">
+          <span>...</span>
         </li>
         <template v-for="index in paginationData">
-          <li :class="{'active': currentPage == index}"><a href="javascript:void(0);" v-html='index' @click="onChangePage(index)" ></a></li>        
+          <li>
+            <a :class="{'is-primary': currentPage == index}" class="button" href="javascript:void(0);" v-html='index' @click="onChangePage(index)" ></a></li>        
         </template>
-        <li :class="{'disabled': currentPage == totalPage}">
-          <a href="javascript:void(0);" aria-label="Next" @click="onChangePage('next')" >
-            <span class="smaller" aria-hidden="true">&gt;</span>
+        <li v-if="isMoreIcon&&paginationData[paginationPage-1]<totalPage">
+          <span>...</span>
+        </li>
+        <li>
+          <a :class="{'is-disabled': currentPage == totalPage}" class="button" href="javascript:void(0);" aria-label="Next" @click="onChangePage('next')" >
+            {{nextPageText}}&gt;
           </a>
         </li>
-        <li :class="{'disabled': currentPage == totalPage}">
-          <a href="javascript:void(0);" aria-label="Last" @click="onChangePage('last')" >
-            <span aria-hidden="true">&raquo;</span>
+        <li>
+          <a :class="{'is-disabled': currentPage == totalPage}" class="button" href="javascript:void(0);" aria-label="Last" @click="onChangePage('last')" >
+            {{lastPageText}}&raquo;
           </a>
         </li>
       </ul>
-      <div class="totalPageNum" slot="totalPageNum">
-            <a href="javascript:void(0);" class="btn btn-default">总共{{ totalPage }}页</a>
-      </div>
-
     </nav>
   </div>
 </template>
@@ -60,8 +63,38 @@ export default {
         return 5
       }
     },
+    isMoreIcon: {
+      type: Boolean,
+      default(){
+        return true
+      }
+    },
     onPageChange: {
       type: Function
+    },
+    firstPageText: {
+      type: String,
+      default(){
+        return '首页'
+      }
+    },
+    previousPageText: {
+      type: String,
+      default(){
+        return '前一页'
+      }
+    },
+    nextPageText: {
+      type: String,
+      default(){
+        return '下一页'
+      }
+    },
+    lastPageText: {
+      type: String,
+      default(){
+        return '末页'
+      }
     }
   },
   watch: {
@@ -83,7 +116,7 @@ export default {
       }else if(this.totalPage > this.paginationPage){
         let firstPageNum = this.currentPage > parseInt(this.paginationPage/2) ? this.currentPage - parseInt(this.paginationPage/2) : 1
 
-        if(this.currentPage + this.paginationPage > this.totalPage){
+        if(this.currentPage + this.paginationPage > (this.totalPage +1)){
           firstPageNum = this.totalPage - this.paginationPage + 1
         }
         for(let index = firstPageNum; index < (firstPageNum + this.paginationPage); index++){

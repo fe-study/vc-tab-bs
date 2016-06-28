@@ -3,16 +3,37 @@
 <head>
 	<meta charset="UTF-8">
 	<title>vue-pagination component.</title>
+	<link rel="stylesheet" href="./css/font-awesome.min.css">
 	<link rel="stylesheet" href="./css/bulma.css">
 	<style>
 		.container{
 			padding: 20px;
+			background: #fff;
 		}
 	</style>
 </head>
 <body>
 	<div id="app" class="container">
-		
+		<p class="control has-addons">
+		  <a class="button">
+		    <span class="icon is-small">
+		      <i class="fa fa-align-left"></i>
+		    </span>
+		    <span>Left</span>
+		  </a>
+		  <a class="button">
+		    <span class="icon is-small">
+		      <i class="fa fa-align-center"></i>
+		    </span>
+		    <span>Center</span>
+		  </a>
+		  <a class="button">
+		    <span class="icon is-small">
+		      <i class="fa fa-align-right"></i>
+		    </span>
+		    <span>Right</span>
+		  </a>
+		</p>
 		<v-button>按钮</v-button>
 		<v-button href='www.baidu.com'>按钮</v-button>
 		<v-button v-style='primary small'>按钮</v-button>
@@ -45,8 +66,17 @@
 				<v-button>8</v-button>
 			</v-button-group>
 		</v-button-toolbar>
+
+
+		<v-base-select :select-items.sync='selectItems' :selected.sync='selected'></v-base-select>
+		<v-select :select-items='selectItems' :selected='selected' :on-selected='onSelected'></v-select>
+
+		<v-pagination :total='total'
+		 :per-page='perPage'
+		 :on-page-change='onPageChange'
+		 :is-more-icon='false'></v-pagination>
 	</div>
-	<script src="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+	<script asrc="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
 	<script src='../dist/app.js'></script>
 </body>
 </html>

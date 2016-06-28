@@ -1,5 +1,5 @@
 <template>
-	<div class="is-btn-toolbar columns">
+	<div class="control is-group columns is-btn-toolbar">
 		<slot></slot>
 	</div>
 </template>
@@ -9,7 +9,7 @@
 	}
 </script>
 <style>
-	.is-btn-toolbar .is-btn-group{
+	.is-btn-toolbar .control{
 		margin: 5px;
 	}
 </style>
