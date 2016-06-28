@@ -1,9 +1,9 @@
 // webpack.config.js
 module.exports = {
   //devtool: 'source-map',
-  entry: './src/app.js',
+  entry: './doc/app.js',
   output: {
-    path: __dirname + '/dist',
+    path: __dirname + '/doc/js',
     filename: 'v-bulma.js'
   },
   module: {

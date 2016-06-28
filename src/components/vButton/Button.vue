@@ -14,12 +14,11 @@
 	export default {
 		data (){
 			return {
-				prefix: 'is-',
 				className: ''
 			}
 		},
 		props: {
-			vStyle: {
+			vClass: {
 				type: String,
 				default (){
 					return ''
@@ -51,16 +50,16 @@
 			vbStyle(){
 				let vStyle = ''
 				if(this.className){
-					vStyle = this.vStyle + ' ' + this.className
+					vStyle = this.vClass + ' ' + this.className
 				}else{
-					vStyle = this.vStyle
+					vStyle = this.vClass
 				}
 				if(!vStyle){
 					return ''
 				}
 				let style = []
 				style = vStyle.trim().split(' ').map((vClass)=>{
-					return this.prefix + vClass
+					return vClass
 				})
 				return style.join(' ')
 			}
@@ -77,8 +76,8 @@
 					this.className = this.className.replace(new RegExp(className), '')
 				}
 
-				if(this.vStyle ){
-					this.vStyle = this.vStyle.replace(new RegExp(className), '')
+				if(this.vClass ){
+					this.vClass = this.vClass.replace(new RegExp(className), '')
 				}
 			}
 		}

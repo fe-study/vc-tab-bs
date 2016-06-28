@@ -1,4 +1,4 @@
-## vue-bluma
+## vue-bulma
 
 * button
  * vButton

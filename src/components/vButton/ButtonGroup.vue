@@ -11,7 +11,7 @@
 			}
 		},
 		props: {
-			vStyle: {
+			vClass: {
 				type: String,
 				default (){
 					return ''
@@ -20,11 +20,11 @@
 		},
 		computed: {
 			vbStyle(){
-				if(!this.vStyle){
+				if(!this.vClass){
 					return ''
 				}
 				let style = []
-				style = this.vStyle.trim().split(' ').map((vClass)=>{
+				style = this.vClass.trim().split(' ').map((vClass)=>{
 					return vClass
 				})
 				return style.join(' ')

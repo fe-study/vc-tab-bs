@@ -30,7 +30,7 @@
 			vClass: {
 				type: String,
 				default(){
-					return 'is-boxed'
+					return ''
 				}
 			}
 		},
