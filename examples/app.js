@@ -5,7 +5,9 @@ import {
 	vButtonToolbar,
 	vSelect,
 	vBaseSelect,
-	vPagination
+	vPagination,
+	vTab,
+	vNav
 } from '../src/app.js'
 
 Vue.config.devtools = true
@@ -17,7 +19,9 @@ new Vue({
 		vButtonToolbar,
 		vSelect,
 		vBaseSelect,
-		vPagination
+		vPagination,
+		vTab,
+		vNav
 	},
 	data: {
 		total: 152,
@@ -36,10 +40,27 @@ new Vue({
 				value: 'c',
 				text: 'selecthree'
 			}
+		],
+		tabArray: [
+			{
+				text: 'music',
+				index: 0
+			},
+			{
+				text: 'video',
+				index: 1
+			},
+			{
+				text: 'movies',
+				index: 2
+			}
 		]
 	},
 	methods: {
 		onPageChange(page){
+			console.log('pageNum: ', page)
+		},
+		onNavChange(page){
 			console.log('pageNum: ', page)
 		},
 		onSelected(option){

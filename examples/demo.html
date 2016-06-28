@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>vue-pagination component.</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="./css/font-awesome.min.css">
 	<link rel="stylesheet" href="./css/bulma.css">
 	<style>
@@ -75,6 +76,58 @@
 		 :per-page='perPage'
 		 :on-page-change='onPageChange'
 		 :is-more-icon='false'></v-pagination>
+
+		 <v-tab :data='tabArray'
+		 	:on-nav-change='onNavChange'></v-tab>
+
+
+		 <v-nav toggle-item="right">
+			<div slot="left" class="nav-left">
+			    <a class="nav-item" href="#">
+			      <img src="/images/bulma.png" alt="Bulma logo">
+			    </a>
+			  </div>
+
+			  <div slot="center" class="nav-center">
+			    <a class="nav-item" href="#">
+			      <span class="icon">
+			        <i class="fa fa-github"></i>
+			      </span>
+			    </a>
+			    <a class="nav-item" href="#">
+			      <span class="icon">
+			        <i class="fa fa-twitter"></i>
+			      </span>
+			    </a>
+			  </div>
+
+			  <div slot="right" class="nav-right nav-menu">
+			    <a class="nav-item" href="#">
+			      Home
+			    </a>
+			    <a class="nav-item" href="#">
+			      Documentation
+			    </a>
+			    <a class="nav-item" href="#">
+			      Blog
+			    </a>
+
+			    <span class="nav-item">
+			      <a class="button" >
+			        <span class="icon">
+			          <i class="fa fa-twitter"></i>
+			        </span>
+			        <span>Tweet</span>
+			      </a>
+			      <a class="button is-primary" href="#">
+			        <span class="icon">
+			          <i class="fa fa-download"></i>
+			        </span>
+			        <span>Download</span>
+			      </a>
+			    </span>
+			  </div>
+		 </v-nav>
 	</div>
 	<script asrc="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
 	<script src='../dist/app.js'></script>

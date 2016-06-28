@@ -8,6 +8,10 @@ import vSelect from './components/vSelect/Select.vue'
 
 import vPagination from './components/vPagination/pagination.vue'
 
+import vTab from './components/vTab/tab.vue'
+
+import vNav from './components/vNav/nav.vue'
+
 export {
 	vButton,
 	vButtonGroup,
@@ -16,6 +20,9 @@ export {
 	vBaseSelect,
 	vSelect,
 
-	vPagination
+	vPagination,
+
+	vTab,
+	vNav
 }
 

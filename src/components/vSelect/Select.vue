@@ -161,8 +161,9 @@
 		text-align: left;
 	}
 	.control .active{
-		background: #ddd;
+		background: #eee;
 		color: #333;
+		border-bottom: none;
 	}
 	.control .box .button:hover{
 		color: #fff;
