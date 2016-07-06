@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/bulma.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/highlight.js/8.9.1/styles/atelier-dune.light.min.css">
     <style>
     .section {
         background: none;
@@ -22,9 +23,22 @@
         <div class="header">
             <v-nav toggle-item="right" class='is-primary'>
                 <div slot="left" class="nav-left">
-                    <a class="nav-item" href="#">
-                        <h3>VUE-BLUMA</h3>
-                    </a>
+                    <v-modal>
+                        <a class="nav-item" href="#">
+                            <h1>Vue-Bulma</h1>
+                        </a>
+                        <div slot='modal-body'>
+                            baiduwaimai
+                        </div>
+                    </v-modal>
+                    <a href="#"
+                        @click.prevent='showClassicModal'>classic modal</a>
+                    <v-classic-modal 
+                        v-ref:classic-modal>
+                        <div slot='body'>
+                            baiduwaimai
+                        </div>
+                    </v-classic-modal>
                 </div>
                 <div slot="right" class="nav-right nav-menu">
                     <a class="nav-item" href="#">
@@ -56,58 +70,11 @@
             <div class="box">
                 <v-tab :data='tabArray' :on-nav-change='onNavChange'></v-tab>
                 <div v-if="tabIndex==0" class="vButtonTab">
-                    <div class="columns">
-                        <div class="column">
-                            <div class="content">
-                            	<h3>Buttons</h3>
-                    		<h4>The classic button, in different colors, sizes, and states</h4>
-                            <hr>
-                                <v-button>default</v-button>
-                                <v-button v-class='is-primary'>primary</v-button>
-                                <v-button v-class='is-info'>info</v-button>
-                                <v-button v-class='is-warning'>warning</v-button>
-                                <v-button v-class='is-danger'>danger</v-button>
-                                <v-button v-class='is-link'>link</v-button>
-                            </div>
-                            <div class="content">
-                            	<h3>Button groups</h3>
-                            	<hr>
-                                    <v-button-group v-class="is-small">
-                                        <v-button v-class='is-primary is-outlined'>按钮</v-button>
-                                        <v-button v-class='is-primary is-loading'>按钮</v-button>
-                                        <v-button v-class='is-primary is-disabled'>按钮</v-button>
-                                    </v-button-group>
-                                    <v-button-group v-class="is-large">
-                                        <v-button v-class='is-info is-outlined'>按钮</v-button>
-                                        <v-button v-class='is-info is-loading'>按钮</v-button>
-                                        <v-button v-class='is-info is-disabled'>按钮</v-button>
-                                    </v-button-group>
-                            </div>
-                            <div class="content">
-                            	<h3>Button toolbar</h3>
-                            	<hr>
-                            <v-button-toolbar>
-                                <v-button-group>
-                                    <v-button>1</v-button>
-                                    <v-button>2</v-button>
-                                    <v-button>3</v-button>
-                                    <v-button>4</v-button>
-                                </v-button-group>
-                                <v-button-group>
-                                    <v-button>5</v-button>
-                                    <v-button>6</v-button>
-                                    <v-button>7</v-button>
-                                    <v-button>8</v-button>
-                                </v-button-group>
-                            </v-button-toolbar>
-                            </div>
-                        </div>
-                        <div class="column"></div>
-                    </div>
-                </div>
+                <!-- <v-button-component></v-button-component> -->
+                  </div>
                 <div v-if="tabIndex==1" class="vSelectTab">
                     <p class="control has-addons">
-                        <v-base-select :select-items.sync='selectItems' :selected.sync='selected'></v-base-select>
+                        <v-base-select :select-items.sync='selectBaseItems' :selected.sync='baseSelected'></v-base-select>
                         <v-select :select-items='selectItems' :selected='selected' :on-selected='onSelected'></v-select>
                 </div>
                 <div v-if="tabIndex==2" class="vTabTab">

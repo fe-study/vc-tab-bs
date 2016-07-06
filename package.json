@@ -1,13 +1,16 @@
 {
-  "name": "vue-pagination",
+  "name": "vue-component",
   "version": "1.0.0",
   "description": "a vue pagination component",
-  "main": "dist/pagination.js",
-  "dependencies": {},
+  "main": "dist/v-bulma.js",
+  "dependencies": {
+    "marked": "^0.3.5"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w",
+    "server": "webpack-dev-server",
     "build-example": "webpack -w --config ./webpack.example.js"
   },
   "repository": {

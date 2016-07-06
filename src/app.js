@@ -12,6 +12,9 @@ import vTab from './components/vTab/tab.vue'
 
 import vNav from './components/vNav/nav.vue'
 
+import vModal from './components/vModal/modal.vue'
+import vClassicModal from './components/vModal/classicModal.vue'
+
 export {
 	vButton,
 	vButtonGroup,
@@ -23,6 +26,8 @@ export {
 	vPagination,
 
 	vTab,
-	vNav
+	vNav,
+	vModal,
+	vClassicModal
 }
 

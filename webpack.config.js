@@ -1,6 +1,6 @@
 // webpack.config.js
 module.exports = {
-  //devtool: 'source-map',
+  devtool: 'source-map',
   entry: './doc/app.js',
   output: {
     path: __dirname + '/doc/js',
@@ -23,6 +23,14 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json'
+      },
+      {
+        test: /\.css|\.less$/,
+        loader: 'style-loader'
+      },
+      {
+        test: /\.html|\.tpl$/,
+        loader: 'html-loader'
       }
     ]
   }

@@ -7,10 +7,48 @@ import {
 	vBaseSelect,
 	vPagination,
 	vTab,
-	vNav
+	vNav,
+	vModal,
+	vClassicModal
 } from '../src/app.js'
 
-Vue.config.devtools = true
+import _ from './helper/util.js'
+const setLang = _.setLang
+
+/*json data*/
+import buttonJsonStore from './store/json/button.js'
+import marked from 'marked'
+
+marked.setOptions({
+  highlight: function (code) {
+    return require('highlight.js').highlightAuto(code).value;
+  }
+})
+
+/*
+ * components
+ */	
+import vButtonComponent from './components/button/button.js'
+console.log('vButtonComponent: ', vButtonComponent)
+/*
+ * store processing 
+ */
+function markedStore(store){
+	let data = []
+	for(let obj in store){
+		let sources = store[obj].code
+		for(let source in sources){
+			data.push(marked(setLang(sources[source], source)))
+		}
+	}
+	return data
+}
+
+/*
+ * Buttons demo code
+ */
+let buttonCode = markedStore(buttonJsonStore)
+
 new Vue({
 	el: '#app',
 	components: {
@@ -21,13 +59,31 @@ new Vue({
 		vBaseSelect,
 		vPagination,
 		vTab,
-		vNav
+		vNav,
+		vButtonComponent,
+		vModal,
+		vClassicModal
 	},
 	data: {
 		total: 152,
 		perPage: 10,
-		selected: 'a',
+		selected: 0,
 		selectItems: [
+			{
+				value: 'a',
+				text: 'selectone'
+			},
+			{
+				value: 'b',
+				text: 'selecttwo'
+			},
+			{
+				value: 'c',
+				text: 'selecthree'
+			}
+		],
+		baseSelected: 'a',
+		selectBaseItems: [
 			{
 				value: 'a',
 				text: 'selectone'
@@ -59,7 +115,8 @@ new Vue({
 				index: 3
 			}
 		],
-		tabIndex: 0
+		tabIndex: 0,
+		vButtonCode: buttonCode
 	},
 	methods: {
 		onPageChange(page){
@@ -70,6 +127,9 @@ new Vue({
 		},
 		onSelected(option){
 			console.log('selected item: ', option.value, option.text)
+		},
+		showClassicModal(){
+			this.$refs.classicModal.onShow()
 		}
 	}
 })

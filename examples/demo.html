@@ -70,7 +70,7 @@
 
 
 		<v-base-select :select-items.sync='selectItems' :selected.sync='selected'></v-base-select>
-		<v-select :select-items='selectItems' :selected='selected' :on-selected='onSelected'></v-select>
+		<vue-select :select-items='selectItems' :selected='selected' :on-selected='onSelected'></vue-select>
 
 		<v-pagination :total='total'
 		 :per-page='perPage'
@@ -130,6 +130,7 @@
 		 </v-nav>
 	</div>
 	<script asrc="http://cdn.bootcss.com/vue/1.0.24/vue.min.js"></script>
+	<script src='../dist/v-select.js'></script>
 	<script src='../dist/app.js'></script>
 </body>
 </html>

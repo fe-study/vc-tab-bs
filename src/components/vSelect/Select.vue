@@ -5,7 +5,7 @@
 			v-on:mouseover="vSelectHover" 
 			v-on:mouseout="vSelectOut"
 			@click="switchSelectBody">
-			selected
+			{{selectedItem}}
 			<span class="icon">
 				<i class="fa fa-angle-down"></i>
 			</span>
@@ -24,7 +24,6 @@
 	export default {
 		data (){
 			return {
-				prefix: 'is-',
 				className: '',
 				isHover: false,
 				isShow: false,
@@ -33,8 +32,7 @@
 		},
 		props: {
 			selected: {
-				type: [String, Number],
-				required: true
+				type: [Number]
 			},
 			selectItems: {
 				type: Array,
@@ -53,7 +51,7 @@
 			vStyle: {
 				type: String,
 				default (){
-					return 'primary'
+					return 'is-primary'
 				}
 			}
 		},
@@ -75,14 +73,15 @@
 				}
 				let style = []
 				style = vStyle.trim().split(' ').map((vClass)=>{
-					return this.prefix + vClass
+					return vClass
 				})
 				return style.join(' ')
 			},
 			selectArray(){
-				let allItem = {value: 'all', text: '全部'}
-				this.selectItems.splice(0, 0, allItem)
 				return this.selectItems
+			},
+			selectedItem(){
+				return this.selectArray[this.currentIndex].text
 			}
 		},
 		methods: {
@@ -153,7 +152,7 @@
 	}
 	.control .box .button{
 		width: 100%;
-		max-width: 120px;
+		max-width: 150px;
 		color: #333;
 		border: none;
 		border-bottom: 1px solid #eee;
