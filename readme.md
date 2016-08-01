@@ -1,22 +1,21 @@
-## vue-bulma
+## vue component skeleton
 
-* bulma site: [http://bulma.io/](http://bulma.io/)
-* vue-bulma site: [http://yangxiaofu.com/vue-bulma/doc/vue-bulma.html](http://yangxiaofu.com/vue-bulma/doc/vue-bulma.html)
+## usage
 
-* button
- * vButton
- * vButtonGroup
- * vButtonToolbar
+* Build
 
-* select
- * vBaseSelect
- * vSelect
+```node
+npm run build
+```
 
-* pagination
- * vPagination
+* Build example
 
-* tab
- * vTab
+```node
+npm run example
+```
 
-* nav
- * vNav
+* run server
+
+```node
+npm run start
+```
