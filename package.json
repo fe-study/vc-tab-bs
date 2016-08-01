@@ -1,7 +1,7 @@
 {
-  "name": "vue component skeleton",
+  "name": "vue-component-skeleton",
   "version": "0.0.1",
-  "description": "web components",
+  "description": "vue component skeleton",
   "main": "dist/build.js",
   "repository": {},
   "homepage": "",
