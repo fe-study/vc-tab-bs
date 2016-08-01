@@ -1,8 +1,8 @@
 {
-  "name": "app",
+  "name": "vue component skeleton",
   "version": "0.0.1",
   "description": "web components",
-  "main": "dist/app.js",
+  "main": "dist/build.js",
   "repository": {},
   "homepage": "",
   "dependencies": {
