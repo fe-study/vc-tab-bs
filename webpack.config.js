@@ -13,6 +13,12 @@ module.exports = {
   resolve: {
     root: path.resolve('./')
   },
+  vue: {
+    loaders: {
+      css: 'style!css!less',
+      js: 'babel'
+    }
+  },
   module: {
     loaders: [
       {test: /\.vue$/, loader: 'vue' },

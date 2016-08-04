@@ -1,6 +1,6 @@
 {
   "name": "vue-component-skeleton",
-  "version": "0.0.3",
+  "version": "0.0.6",
   "description": "vue component skeleton",
   "main": "dist/build.js",
   "repository": {},
@@ -31,7 +31,7 @@
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "example": " webpack --progress --hide-modules --config  webpack.example.js",
-    "build": " webpack --progress --hide-modules ",
+    "build": " webpack -w --progress --hide-modules ",
     "publish": "webpack --progress --hide-modules --config  webpack.production.js"
   },
   "author": "yangshengfu_iwm",
