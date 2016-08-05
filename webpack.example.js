@@ -5,7 +5,7 @@ config.entry = {
 }
 
 config.output = {
-  filename: './dist/example.js',
+  filename: './examples/static/build/build.js',
   library: 'VueComponentDemo',
   libraryTarget: 'umd'
 }
