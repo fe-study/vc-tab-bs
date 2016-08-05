@@ -1,14 +1,10 @@
 {
-  "name": "vue-component-skeleton",
-  "version": "0.0.6",
+  "name": "vc-tab-bs",
+  "version": "0.0.1",
   "description": "vue component skeleton",
-  "main": "dist/build.js",
-  "repository": {},
-  "homepage": "",
   "dependencies": {
     "vue": "^1.0.8"
   },
-  "keywords": [],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
@@ -34,6 +30,7 @@
     "build": " webpack -w --progress --hide-modules ",
     "publish": "webpack --progress --hide-modules --config  webpack.production.js"
   },
-  "author": "yangshengfu_iwm",
+  "main": "dist/build.js",
+  "keywords": [],
   "license": "MIT"
 }

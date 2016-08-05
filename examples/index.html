@@ -7,7 +7,10 @@
 </head>
 <body>
 	<div id='app'>
-		<v-hello></v-hello>
+		<vc-hello></vc-hello>
+        <vc-tab
+            :data='tabData'
+            :on-nav-change='onNavChange'></vc-tab>
 	</div>
 	<script src='./static/build/build.js'></script>
 </body>
