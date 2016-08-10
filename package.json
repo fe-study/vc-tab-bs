@@ -1,6 +1,6 @@
 {
   "name": "vc-tab-bs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "vue component skeleton",
   "dependencies": {
     "vue": "^1.0.8"

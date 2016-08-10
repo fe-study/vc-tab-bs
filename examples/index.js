@@ -1,8 +1,5 @@
 import Vue from 'vue'
-import {
-		vcHello,
-		vcTab
-	} from '../dist/build.js'
+import vcTab from '../dist/build.js'
 
 new Vue({
 	el: '#app',
@@ -29,7 +26,6 @@ new Vue({
 		}
 	},
 	components: {
-		vcHello,
 		vcTab
 	},
 	methods: {

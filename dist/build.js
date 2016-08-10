@@ -59,7 +59,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.vcTab = exports.vcHello = undefined;
 	
 	var _helloworld = __webpack_require__(3);
 	
@@ -68,11 +67,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _tab = __webpack_require__(6);
 	
 	var _tab2 = _interopRequireDefault(_tab);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	exports.vcHello = _helloworld2.default;
-	exports.vcTab = _tab2.default;
+
+	exports.default = _tab2.default;
 
 /***/ },
 /* 1 */,

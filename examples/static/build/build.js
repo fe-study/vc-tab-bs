@@ -62,6 +62,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _build = __webpack_require__(3);
 	
+	var _build2 = _interopRequireDefault(_build);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	new _vue2.default({
@@ -85,8 +87,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		},
 	
 		components: {
-			vcHello: _build.vcHello,
-			vcTab: _build.vcTab
+			vcTab: _build2.default
 		},
 		methods: {
 			onNavChange: function onNavChange(index) {}
@@ -10380,7 +10381,6 @@ return /******/ (function(modules) { // webpackBootstrap
 				Object.defineProperty(exports, "__esModule", {
 					value: true
 				});
-				exports.vcTab = exports.vcHello = undefined;
 	
 				var _helloworld = __webpack_require__(3);
 	
@@ -10394,8 +10394,7 @@ return /******/ (function(modules) { // webpackBootstrap
 					return obj && obj.__esModule ? obj : { default: obj };
 				}
 	
-				exports.vcHello = _helloworld2.default;
-				exports.vcTab = _tab2.default;
+				exports.default = _tab2.default;
 	
 				/***/
 			},,,
